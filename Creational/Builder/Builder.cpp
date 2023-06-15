@@ -1,12 +1,7 @@
 #include "Student.h"
-#include "StudentBuilder.h"
 
 int main()
 {
-
-    auto studentBuilder = StudentBuilder::getStudentBuilder();
-    studentBuilder->setName("Santosh");
-    studentBuilder->setAge(20);
-
-    return 0;
+    auto s = Student::getStudentBuilder()->setAge(20)->setName("Santosh")->setPhoneNumber(23423)->getStudent();
+    s->print();
 }

@@ -1,0 +1,36 @@
+@startuml classDiagramShapeFactoryPattern
+interface Shape{
+    +{abstract} draw()
+}
+class Circle implements Shape{
+    - draw()
+}
+class Square implements Shape{
+    - draw()
+}
+class Triangle implements Shape{
+    - draw()
+}
+
+class ShapeFactory{
+    + getShape()
+}
+ShapeFactory ..> Shape : creates
+
+' Composition One class Owns another class(object stored as member variable)
+' Aggregation 1st class have member variable of 2nd class but class 1st class can exists without 2nd
+' Assosiation One Class uses functionality of other class(Passed in the method)
+class class1
+class class2
+class1 *..> class2 : composistion
+
+class class3
+class class4
+class3 o..> class4 : aggregation
+
+class class5
+class class6
+class5 -> class6 : assosiation
+
+
+@enduml
